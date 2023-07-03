@@ -1,0 +1,110 @@
+@use '/src/sass/variables' as v;
+@use '/src/sass/mixins' as m;
+
+.about {
+    height: 100%;
+    color: #e7e7e7;        
+    background-image: radial-gradient(circle farthest-corner at 20% 100%, #302519, v.$colorTerciary, v.$colorTerciary);
+    background-attachment: fixed; 
+    display: flex;
+    justify-content: center;
+    @include m.movil {
+        background-image: radial-gradient(circle farthest-corner at 20% 75%, #302519, v.$colorTerciary, v.$colorTerciary);
+    }
+    &.isActive {
+        pointer-events: none;
+    }        
+    &__content {
+        display: flex;
+        @include m.movil {
+            flex-flow: row wrap;
+        }
+        @include m.tablet {
+            flex-flow: row wrap;
+        }
+        @include m.pc {
+            flex-flow: row wrap;
+        }
+    }
+    &__container {
+        max-width: v.$maxwidth;        
+        padding: 5.5em 1rem 0 1rem; 
+    }
+    &__img-container {        
+        width: 70%;        
+        padding: 3em 0 0 0;  
+        @include m.pc {
+            width: 80%;
+            order: 1;
+            padding: 0;
+        }
+        @include m.tablet {
+            width: 80%;
+            order: 1;
+            padding: 0 0 1em 0;            
+        } 
+        @include m.movil {
+            width: 100%;
+            order: 1;
+            padding: 0;            
+        }             
+    }
+    &__img-content {
+        width: 100%;
+    }
+    &__info {
+        font-size: v.$font-h4;
+        line-height: 1.1;
+        width: 35em;
+        padding: 0 0 2.5em 0;
+        @include m.movil {
+            width: 100%;                        
+        }
+        @include m.tablet {
+            width: 100%;
+        }
+        @include m.pc {
+            width: 100%;
+        }
+        &1 {
+            width: 95%;
+            font-size: v.$font-h4;
+            line-height: 1.1; 
+            @include m.pc {
+                width: 100%;
+                padding: 0 0 4em 0;
+            } 
+            @include m.movil {                                
+                width: 100%;
+                padding: 0 0 4em 0;                
+            } 
+            @include m.tablet {
+                width: 100%;
+                padding: 0 0 4em 0; 
+            }         
+        }
+        &-span {
+            width: 40%;            
+        }
+        &-container {                      
+            width: 60%;
+            left: 1rem; 
+            @include m.pc {
+                width: 100%;
+                display: flex;
+                order: 2;
+            }
+            @include m.movil {
+                width: 100%;  
+                display: flex;              
+                order: 2;
+            }      
+            @include m.tablet {
+                width: 100%;  
+                display: flex;              
+                order: 2;
+            }     
+        }
+    }
+   
+}

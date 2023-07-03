@@ -1,0 +1,132 @@
+@use '/src/sass/variables' as v;
+@use '/src/sass/mixins' as m;
+
+.header {
+    &__navbar {   
+        background-color: v.$colorTerciary;  
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        width: 10em;
+        visibility: hidden;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5em;    
+        color: #fff;
+        height: 100vh;
+        transition: all ease-in-out .5s;   
+        box-shadow: 0 0 0 100vw rgba(71, 49, 23, 0.7);            
+        &.isActive {
+            visibility: visible;
+            opacity: 1;
+            width: 15em;            
+        }
+        @include m.tablet {
+            font-size: 1.5em;
+        }
+        @include m.movil {
+            font-size: 1.2em;
+        }
+        
+        &-item {            
+            position: relative;                                  
+            &-container {                    
+                padding: 3em 1.5rem 0 0;
+                a.active {
+                    color: v.$colorSecondary;
+                }
+                @include m.pc {
+                    padding: 7.5em 1.5rem 0 0;
+                }
+                @include m.tablet {
+                    padding: 7em 1.5rem 0 0;
+                }  
+                @include m.movil {
+                    padding: 7em 1.5rem 0 0;
+                }   
+            }            
+            &-span1 {
+                position: absolute;
+                padding: 0 0 0 9em;
+                right: 0;
+            }
+            &-span2 {
+                position: absolute;              
+                width: 11.34em;                               
+                top: 2.5em;
+                right: 0;
+            }
+            &-span3 {
+                position: absolute;
+                padding: 0 0 0 8em;
+                top: 5em;
+                right: 0;
+            }
+            &-span4 {
+                position: absolute;
+                padding: 0 0 0 9em;
+                top: 7.5em;
+                right: 0;
+            }
+            &-span5 {
+                position: absolute;
+
+                padding: 0 0 0 8.5em;
+                top: 10em;
+                right: 0;
+            }
+            &-span6 {
+                position: absolute;
+                padding: 0 0 0 7em;
+                top: 12.5em;
+                right: 0;
+            }
+        }         
+        &-btn {            
+            display: flex;
+            flex-direction: column;
+            width: 2rem;
+            height: 2rem;            
+            gap: .58rem;        
+            right: 1.5em;  
+            top: 4.8em;
+            & span {
+                background: #fff;
+                height: 2px;
+                width: 100%;            
+                transition: all .5s;
+                transform-origin: left;
+            }
+            &-bar1.isActive {
+                transform: rotate(45deg);
+                background-color: v.$colorSecondary;
+                
+            }
+            &-bar2.isActive {
+                opacity: 0;
+                
+            }
+            &-bar3.isActive{
+                transform: rotate(-45deg);  
+                background-color: v.$colorSecondary;         
+            }
+            &-container {
+                position: absolute;                               
+                top: 2.2em;
+                right: 1.5rem;
+                z-index: 2;
+                @include m.pc {
+                    top: 3.2em;
+                }
+                @include m.tablet {
+                    top: 2.9em;
+                }
+                @include m.movil {
+                    top: 3.5em;
+                }
+            }
+        } 
+    }
+}

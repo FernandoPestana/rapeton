@@ -1,0 +1,84 @@
+@use '/src/sass/variables' as v;
+@use '/src/sass/mixins' as m;
+
+.footer {
+    display: flex;
+    justify-content: center;
+    @include m.selector;
+    &.isActive {
+        pointer-events: none;
+    }
+    &__content {
+        padding: 0 1rem;                
+        width: v.$maxwidth;        
+    }
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5em 0;
+        color: v.$colorSecondary;
+        @include m.movil {
+            flex-flow: row wrap;  
+            padding: 1.5em 0 0 0;          
+        }
+        @include m.tablet {
+            flex-flow: row wrap;
+            padding: 1.5em 0 0 0;
+        }
+    }
+    &__networks {
+        display: flex;
+        gap: 1em;
+        font-size: 1.8em;
+        @include m.movil {
+            justify-content: center;
+            width: 100%;
+            order: 2;                      
+        }
+        @include m.tablet {
+            justify-content: center;
+            width: 100%;
+            order: 2;
+        }
+    }
+    &__legal {
+        &-content {
+            display: flex;
+            gap: 1.5em;            
+            align-items: center;
+            @include m.tablet {
+                justify-content: space-between;
+                width: 100%;
+                order: 1;
+                padding: .4em 0;  
+                margin: 0 0 1.5em 0; 
+            }
+            @include m.movil {
+                justify-content: space-between;
+                width: 100%;
+                order: 1;                   
+                padding: .4em 0;  
+                margin: 0 0 1.5em 0;  
+                gap: .2em; 
+                font-size: .8em;       
+            }
+           
+        }
+    }
+    &__rights {
+        display: flex;        
+        justify-content: center;
+        align-items: center;
+        gap: .5em;
+        padding: 1.5em 0;
+        img {
+            width: 2.8em;
+        }       
+    }
+}
+
+@media (hover: hover) {
+    .footer__networks-content:hover {
+        color: #fff;
+    }
+}

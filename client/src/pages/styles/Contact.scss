@@ -1,0 +1,176 @@
+@use '/src/sass/variables' as v;
+@use '/src/sass/mixins' as  m;
+
+.contact {
+    height: 100%;
+    background-image: radial-gradient(circle farthest-corner at 95% 140%, #302519, v.$colorTerciary, v.$colorTerciary);         
+    background-attachment: fixed; 
+    padding: 0 0 3em 0;
+    @include m.tablet {
+        background-image: radial-gradient(circle farthest-corner at 95% 100%, #302519, v.$colorTerciary, v.$colorTerciary);         
+    }
+    @include m.movil {
+        background-image: radial-gradient(circle farthest-corner at 95% 100%, #302519, v.$colorTerciary, v.$colorTerciary);         
+    }
+    &.isActive {
+        pointer-events: none;
+    }
+    &__title {       
+        padding: 0;                      
+        display: flex;
+        justify-content: center;        
+        font-size: v.$font-h3;
+        @include m.movil {
+            padding: 2em 0 1em 0;
+        }
+    }
+    &__form {
+        display: flex;
+        justify-content: center;
+        &-content {
+            margin: 0 0 1em 0;
+        }
+        textarea {
+            resize: none;
+            outline: none;
+        }
+        &-container {
+            width: 35em;
+            margin: 0 0 3em 0;
+            @include m.tablet {
+                width: 100%;                
+                padding: 1.5em 1rem 5em 1rem;
+                max-width: 35em;
+            }
+            @include m.movil {
+                width: 100%;                
+                padding: 1.5em 1rem 5em 1rem;
+            }
+        }
+        &-input {            
+            border: 1px solid #fff;
+            border-radius: .5em;
+            padding: .7em .5em;
+            width: 100%;
+            outline: none;
+            &-1 {
+                border: 1px solid #fff;
+                border-radius: .5em;
+                height: 8em;
+                width: 100%;
+                padding: .7em .5em;       
+            }
+        }
+        &-btn {
+            width: 100%;
+            &-container {
+                width: 100%;  
+                padding: 1.5em 0;
+                @include m.pc {
+                    @include m.selector;
+                    border: 1px solid v.$colorSecondary;
+                    border-radius: 1em;
+                    color: v.$colorSecondary;
+                    padding: 1em 0;
+                    margin: 2.5em 0 0 0;
+                    &:active {
+                        background-color: v.$colorSecondary;
+                        span {
+                            color: #fff;
+                        }
+                    }
+                }
+                @include m.tablet {
+                    @include m.selector;
+                    border: 1px solid v.$colorSecondary;
+                    border-radius: 1em;
+                    color: v.$colorSecondary;
+                    padding: 1em 0;
+                    margin: 2.5em 0 0 0;
+                    &:active {
+                        background-color: v.$colorSecondary;
+                        span {
+                            color: #fff;
+                        }
+                    }
+                }
+                @include m.movil {
+                    @include m.selector;
+                    border: 1px solid v.$colorSecondary;
+                    border-radius: 1em;
+                    color: v.$colorSecondary;
+                    padding: 1em 0;
+                    margin: 2.5em 0 0 0;
+                    &:active {
+                        background-color: v.$colorSecondary;
+                        span {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.button1 {
+    width: 100%;
+}
+
+@media (hover: hover) {
+    .button1 {
+        pointer-events: auto;
+        cursor: pointer;
+        background: v.$colorSecondary;
+        border: none;
+        padding: .6em 3.5em;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        &:hover {
+            span {
+                color: #fff;
+            }
+        }
+    }
+    
+    .button1::before,
+    .button1::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .button1--pan {        
+        font-weight: 700;
+        border: 2px solid v.$colorSecondary;
+        border-radius: 1em;
+        overflow: hidden;
+        color: v.$colorSecondary;
+    }
+    
+    .button1--pan span {
+        position: relative;
+        color: v.$colorSecondary;
+        letter-spacing: 2px;
+        font-family: 'reg';
+    }
+    
+    .button1--pan::before {
+        content: '';
+        background: v.$colorTerciary;
+        transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+    }
+    
+    .button1--pan:hover::before {
+        transform: translate3d(0,-100%,0);
+    }
+}
+
+

@@ -1,0 +1,24 @@
+$colorPrimary: #131313;
+$colorSecondary: #fe8d00;
+$colorTerciary: #191a1c;
+$black-1: #0000;
+$black-5: #0f0f0f;
+$black-2: #3333;
+$black-6: #1f1f1f;
+$black-3: #5555;
+$black-4: #191970;
+
+$colorOrange: #473117;
+$orange-2: #B24C18;
+
+$maxwidth: 1300px;
+
+$font-h1: clamp(3.2rem, .5692rem + 8.238vw, 13.75rem);
+$font-h2: clamp(1.5rem, 1.0982rem + 1.7143vw, 2.8125rem);
+$font-h3: clamp(1.375rem, 1.1837rem + .8163vw, 2rem);
+$font-h4: clamp(1.375rem, 1.1837rem + .8163vw, 1.6rem);
+$font-h5: clamp(1rem, .9235rem + .3265vw, 1.25rem);
+$font-h6: clamp(1rem, .9617rem + .1633vw, 1.125rem);
+$font-body: clamp(1rem, .8852rem + .4898vw, 1.375rem);
+$font-link: clamp(.875rem, .7985rem + .3265vw, 1.125rem);
+$font-mini: clamp(.875rem, .8367rem + .1633vw, 1rem);

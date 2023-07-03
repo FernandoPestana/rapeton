@@ -1,0 +1,129 @@
+@use '/src/sass/variables' as v;
+@use '/src/sass/mixins' as m;
+
+.content {
+    background-color: rgba(25, 26, 28, .85);
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    z-index: 1;  
+    backdrop-filter: blur(5px);
+    @include m.selector;
+    &.isActive {
+        pointer-events: none;
+    }
+}
+
+.container {
+    width: v.$maxwidth;
+}
+.streaming {
+    display: flex;
+    justify-content: center;
+    color: v.$colorSecondary;
+    font-size: 1.9em;    
+    gap: 1em;
+    &__content {        
+        display: flex;
+        margin: .2em 0 0 0;
+        &:active {
+            color: #fff;
+        }
+    }
+}
+.header {    
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;    
+    padding: 0 1rem 1em 1rem;      
+    &__img {
+        &-content {
+            width: 12em;  
+            @include m.tablet {
+                width: 10em;
+            } 
+            @include m.movil {
+                width: 8.5em;
+            }  
+                   
+        }
+    }
+    
+    &__nav {
+        &-tier {
+            display: flex;            
+            gap: 2.5em;
+            align-items: center;
+            @include m.pc {
+                display: none;                
+            }
+            a.active {
+                background-color: v.$colorSecondary;
+                border-radius: 1em;
+                padding: .2em .5em .3em .5em;
+                margin: -.2em -.5em -.3em -.5em;
+                color: #fff;
+            }
+        }
+        &-item {
+            display: flex;
+            font-size: v.$font-mini;  
+            span {
+                background-color: #fff;
+                border-radius: 1em;
+                padding: .2em .5em .3em .5em;
+                margin: -.2em -.5em -.3em -.5em;
+            }          
+        }
+    }
+    &__button {
+        &-container {   
+            position: relative;                     
+            display: flex;
+            align-items: center;
+            align-items: center;
+            z-index: 3;
+            padding: 0 0 0 .8em;
+        }        
+        display: flex;
+        flex-direction: column;
+        width: 2rem;
+        height: 2rem;
+        display: none;
+        gap: .59rem;        
+        right: 1.5em;  
+        top: 4.8em; 
+        @include m.pc {
+            display: flex;
+        }    
+        & span {
+            background: #fff;
+            height: 2px;
+            width: 100%;            
+            transition: all .5s;
+            transform-origin: left;
+        }
+        &-bar1.isActive {
+            transform: rotate(45deg);
+            
+        }
+        &-bar2.isActive {
+            opacity: 0;
+            
+        }
+        &-bar3.isActive{
+            transform: rotate(-45deg);            
+        }
+    }
+}
+
+@media (hover: hover) {
+    .header__nav-item:hover {
+        color: v.$colorSecondary;
+    }
+    .streaming__content:hover {
+        color: #fff;
+    }
+}

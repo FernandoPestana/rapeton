@@ -1,0 +1,201 @@
+@use '/src/sass/variables' as v;
+@use '/src/sass/mixins' as m;
+
+.banner {
+    &__content {
+        position: relative;
+        background-color: v.$colorTerciary;
+        &.isActive {        
+            visibility: hidden;
+            overflow: hidden;
+            opacity: 0;        
+        }
+    }
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    background-image: url(/public/images/Rapeton-aproved.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: fixed;  
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: all ease-in .2s;
+    z-index: 2;    
+    transform: scale(1.1);
+    @include m.pc {
+        transform: scale(1.1);
+        width: 100vw;
+        background-size: auto 100%;
+        height: auto;
+    }
+    @include m.tablet {
+        transform: scale(1);
+    }
+    
+    &__info {
+        position: absolute;
+        bottom: 23vh;        
+        color: v.$colorTerciary;        
+        width: 100%;
+        transform: rotate(-.8deg);
+        @include m.selector;
+        @include m.pc {
+            bottom: 27vh;
+        }
+        @include m.tablet {
+            bottom: 26.8vh;
+        }
+        @include m.movil {
+            bottom: 26.8vh;            
+        }
+        &-title {            
+            font-size: .75em;
+            font-family: 'obw';
+            @include m.pc {
+                font-size: 1.7vh;
+            }
+            @include m.tablet {
+                font-size: 1.7vh;
+            }
+            @include m.movil {
+                font-size: 1.7vh;
+            }
+            &-container {
+                margin: .9vh 0;                
+                text-align: center;
+            }
+        }
+        &-btn {            
+            border-radius: 1em;
+            @include m.pc {
+                background-color: #bbbbbb;
+                border: 1px solid v.$orange-2;
+                padding: 1vh 7vh;
+                color: v.$orange-2;
+                font-size: 2vh;
+                &:active {
+                    background-color: v.$colorSecondary;
+                    span {
+                        color: #bbbbbb;
+                    }
+                }
+            }
+            @include m.tablet {
+                background-color: #bbbbbb;
+                border: 1px solid v.$orange-2;
+                padding: 1vh 7vh;
+                color: v.$orange-2;
+                font-size: 2vh;
+                &:active {
+                    background-color: v.$colorSecondary;
+                    span {
+                        color: #bbbbbb;
+                    }
+                }
+            }
+            @include m.movil {
+                background-color: #bbbbbb;
+                border: 1px solid v.$orange-2;
+                padding: 1vh 7vh;
+                color: v.$orange-2;
+                font-size: 2vh;
+                &:active {
+                    background-color: v.$colorSecondary;
+                    span {
+                        color: #bbbbbb;
+                    }
+                }
+            }
+            &:hover {                
+                span {
+                    color: #bbbbbb;
+                    
+                }
+            }
+            &-container {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (hover: hover) {
+    .button {
+        pointer-events: auto;
+        cursor: pointer;
+        background: v.$orange-2;
+        border: none;
+        padding: .4em 1.9em;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .button::before,
+    .button::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .button--pan {        
+        font-weight: 700;
+        border: 2px solid #B24C18;
+        border-radius: 1em;
+        overflow: hidden;
+        color: #B24C18;
+    }
+    
+    .button--pan span {
+        position: relative;
+        color: v.$orange-2;
+        letter-spacing: 2px;
+        font-family: 'reg';
+    }
+    
+    .button--pan::before {
+        content: '';
+        background: #Bbbbbb;
+        transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+    }
+    
+    .button--pan:hover::before {
+        transform: translate3d(0,-100%,0);
+    }
+}
+
+/* Grainy texture animation by Geoff Graham https://css-tricks.com/snippets/css/animated-grainy-texture/ */
+
+.banner::before {
+	animation: grain 8s steps(10) infinite;
+	background-image: url(public/images/noise.png);
+	content: '';
+	height: 300%;
+	left: -50%;
+	opacity: 0.6;
+	position: fixed;
+	top: -100%;
+	width: 300%;
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0); }
+  10% { transform:translate(-5%, -10%); }
+  20% { transform:translate(-15%, 5%); }
+  30% { transform:translate(7%, -25%); }
+  40% { transform:translate(-5%, 25%); }
+  50% { transform:translate(-15%, 10%); }
+  60% { transform:translate(15%, 0%); }
+  70% { transform:translate(0%, 15%); }
+  80% { transform:translate(3%, 35%); }
+  90% { transform:translate(-10%, 10%); }
+}

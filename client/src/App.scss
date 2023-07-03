@@ -1,0 +1,9 @@
+@use '/src/sass/variables' as v;
+
+.app {
+        &.bannerOff {
+                overflow: hidden;
+                height: 100vh;
+        }
+        background-color: v.$colorTerciary;        
+}

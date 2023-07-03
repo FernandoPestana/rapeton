@@ -1,0 +1,25 @@
+@use '/src/sass/variables' as v;
+@use '/src/sass/mixins' as m;
+
+.artists {
+    height: 80vh;
+    color: #e7e7e7;        
+    background-image: radial-gradient(circle farthest-corner at 20% 100%, #302519, v.$colorTerciary, v.$colorTerciary);
+    background-attachment: fixed; 
+    display: flex;
+    justify-content: center;
+    hyphens: none;
+    @include m.movil {
+        background-image: radial-gradient(circle farthest-corner at 15% 85%, #302519, v.$colorTerciary, v.$colorTerciary);
+    }
+    &__container {
+        width: v.$maxwidth;    
+        padding: 0 1rem;    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h2 {
+        font-size: v.$font-h3;
+    }
+}
